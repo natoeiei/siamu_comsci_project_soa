@@ -89,7 +89,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: natoeiei/project-ecom-soa:latest
+          tags: natoeiei/project_ecom:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -112,9 +112,9 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.DROPLET_USER }}@${{ secrets.DROPLET_IP }} << 'EOF'
             cd /root || mkdir -p /root && cd /root
-            rm -rf project-ecom-soa
-            git clone https://github.com/natoeiei/project-ecom.git
-            cd project-ecom-soa
+            rm -rf project_ecom
+            git clone https://github.com/natoeiei/project_ecom.git
+            cd project_ecom
             sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
             sudo apt update
