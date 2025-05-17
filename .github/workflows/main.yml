@@ -104,7 +104,7 @@ jobs:
     steps:
       - name: Setup SSH Key
         run: |
-          echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC4Haws7iBPT8L+zwN5Is1cJpATCasUm/SagUhWdK7pfTwOFrYXbG3Zrcmeer3Qxjv62phnWXQTUg8xDdPNZoCnyfb2LquJjyOa6Fg1uz1n5BESQcew1/GSzJxPe+sMqb/GMm0AAi07/fwDDwuvK3NPh8PnSTkia8iK/RTg0/qzQGBSKJlMbY3KtlrUehEye3O04XQWr8rMuh+TWVNX3fok7ubXkJUsHheNsS2OTOjuUrYDxLLcj/ffLMYTwDwKz29n3Olq2hol8y0ZWLGpVJxyku8V03fuAichX9MxlTVz6LQcPu3nWDbSRILzufr1ujCU37Vi/7I2CdNkswAb39HYOdns6ZQmyQTVDcvOKq85QGRUArj2dlFxXCaKxRkwQ9R8dw3+AtjhWdGYahEGJzdKLVoxwldgErzRnqhh6+pAD/9kKqHMdrRgZzuO8V+cgU3nptKlp5qsYAy4FV++x9L3WL5W+CP28tBGT3j0aOkKG/GCpJoeJD50dVDdX3jc7JoY50ncUKDLAil7+baDaS5aq2gQl99pcCXXpo7wRl4YHx0miOB6iLbAtW4CS1uybPGL2bdSFF5sUGqJcNN/r5h6CHJUoR0KoFM1Ws1Q2Y0PHioSgO23OiRv58rTSliMPhKR2ZhhfDj7/H0Q3jTvf06jlF1km+SK/sSTil9Q+enGgQ== thongtara.chaiwat@gmail.com > key.pem
+          echo "$SSH_KEY" > key.pem
           chmod 600 key.pem
         env:
           SSH_KEY: ${{ secrets.DO_SSH_KEY }}
